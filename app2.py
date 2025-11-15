@@ -85,17 +85,17 @@ st.markdown(
 # st.title('Dashboard Zonas No Interconectadas')
 # st.header('Análisis de datos')
 # st.subheader('Bootcamp Talento Tech')
+
+st.markdown('<a id="inicio"></a><br><br>', unsafe_allow_html=True)
 st.image('img/encabezado.png')
-
-
 ###############################################################################
 #                        TAMAÑO DEL CONJUNTO DE DATOS                         #
 ###############################################################################
 
 
+st.markdown('<a id="acerca-de"></a><br><br>', unsafe_allow_html=True)
 with st.container(border=True):
     st.html('<font size=5><font color=#3D6E85>Acerca del Conjunto de Datos</h2>')
-
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
@@ -123,7 +123,7 @@ with st.container(border=True):
 ###############################################################################
 #      GRAFICO INTRACTIVO DE BARRAS HORIZONTALES POR DEPARTAMENTO Y AÑO       #
 ###############################################################################
-
+st.markdown('<a id="evolucion"></a><br><br>', unsafe_allow_html=True)
 with st.container(border=True):
     st.html('<font size=5><font color=#3D6E85>Evolución de Energía Activa por Departamento</font>')
 
@@ -165,7 +165,7 @@ with st.container(border=True):
 ###############################################################################
 #           INDICADORES DE ENERGÍA ACTIVA POR AÑO EN MILLONES DE KWH          #
 ###############################################################################
-
+st.markdown('<a id="indicadores"></a><br><br>', unsafe_allow_html=True)
 with st.container(border=True):
     st.html('<font size=5><font color=#3D6E85>Indicadores de Energía Activa por año en Millones de kWh</font>')
     col5, col6, col7, col8 = st.columns(4)
@@ -217,9 +217,9 @@ with st.container(border=True):
 
 
 ###############################################################################
-#           INDICADORES DE ENERGÍA ACTIVA POR AÑO EN MILLONES DE KWH          #
+#    GRAFICO BARRAS DE ENERGÍA ACTIVA Y REACTIVA POR AÑO EN MILLONES DE KWH   #
 ###############################################################################
-
+st.markdown('<a id="barras"></a><br><br>', unsafe_allow_html=True)
 with st.container(border=True):
     st.html('<font size=5><font color=#3D6E85>Gráficos de Energía Activa y Reactiva por Municipio</font>')
     col9, col10 = st.columns(2)
@@ -274,6 +274,10 @@ with st.container(border=True):
             # 3. Mostrar
             st.plotly_chart(fig, use_container_width=True)
 
+###############################################################################
+#    GRAFICO TORTAS DE ENERGÍA ACTIVA Y REACTIVA POR AÑO EN MILLONES DE KWH   #
+###############################################################################
+st.markdown('<a id="tortas"></a><br><br>', unsafe_allow_html=True)
 with st.container(border=True):
     st.html('<font size=5><font color=#3D6E85>Gráficos de Energía Activa y Reactiva por Departamento</font>')
 
@@ -309,16 +313,34 @@ with st.container(border=True):
         )
         # 2. Actualización del diseño
 
-
         # 3. Mostrar
         st.plotly_chart(fig_react, use_container_width=True)
 
 
-
-
 ###############################################################################
-#           INDICADORES DE ENERGÍA ACTIVA POR AÑO EN MILLONES DE KWH          #
+#                             MENU EN BARRA LATERAL                           #
 ###############################################################################
 
-
-
+with st.sidebar.container():
+    st.markdown('''
+                <style>
+                [data-testid="stSidebar"] a {
+                    display: block;
+                    color: #3D6E85;
+                    text-decoration: none;
+                    padding: 10px 5px;
+                    border-radius: 6px;
+                }
+                [data-testid="stSidebar"] a:hover {
+                    background-color: #FFFFFF;
+                }
+                </style>
+                ''',
+                unsafe_allow_html=True)
+    st.html('<font size=4><font color=#3D6E85>Menú de Navegación</font>')
+    st.markdown('[Inicio](#inicio)')
+    st.markdown('[Acerca de los Datos](#acerca-de)')
+    st.markdown('[Evolución de Energía Activa](#evolucion)')
+    st.markdown('[Indicadores de Energía Activa](#indicadores)')
+    st.markdown('[Gráfico por Municipio](#barras)')
+    st.markdown('[Gráfico por Departamento](#tortas)')
