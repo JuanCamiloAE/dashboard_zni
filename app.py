@@ -87,7 +87,7 @@ st.markdown(
 # st.subheader('Bootcamp Talento Tech')
 
 st.markdown('<a id="inicio"></a><br><br>', unsafe_allow_html=True)
-st.image('img/encabezado.png')
+st.image('img/Encabezado.png')
 ###############################################################################
 #                        TAMAÑO DEL CONJUNTO DE DATOS                         #
 ###############################################################################
